@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
 const upload = multer({
     storage: storage,
     fileFilter: (req, file, cb) => {
-        if (file.mimetype == 'image/png' || file.mimetype == 'svg' || file.mimetype == 'pdf' || file.mimetype == 'image/jpg') {
+        if (file.mimetype == 'image/png' || file.mimetype == 'image/svg+xml' || file.mimetype == 'application/pdf' || file.mimetype == 'image/jpeg') {
             cb(null, true)
         } else {
             cb(new Error('only png, svg, pdf and jpg files are allowed'))
