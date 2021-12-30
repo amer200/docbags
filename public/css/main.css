@@ -1,0 +1,9 @@
+@font-face {
+    font-family: Nile;
+    src: url('../fonts/Al\ Nile.ttc');
+}
+
+* {
+    font-family: Nile;
+    color: #2828d9;
+}

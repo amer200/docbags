@@ -1,0 +1,13 @@
+.head {
+    padding-top: 50px;
+}
+
+.head h1 {
+    text-align: center;
+    background-color: #2828d9;
+    color: #fff;
+    width: 235px;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+}

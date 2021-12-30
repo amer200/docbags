@@ -1,4 +1,5 @@
-require('dotenv').config()
+require('dotenv').config();
+const User = require('./modell/users');
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
@@ -37,6 +38,16 @@ app.use('/', mainRoute);
 mongoose.connect(process.env.db_url)
     .then(result => {
         app.listen(port)
+        User.findOne({accountnum: '1'})
+            .then( u=>{
+                if(!u){
+                    const user = new User({
+                        accountnum: '1',
+                        password: '123'
+                    })
+                    user.save();
+                }
+            })
         console.log('every thing is ok ')
     })
     .catch(err => {

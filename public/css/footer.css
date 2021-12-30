@@ -1,0 +1,35 @@
+.footer ul {
+    list-style: none;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+.footer li {
+    display: inline;
+    color: #2828d9;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 20px;
+}
+
+.footer li a {
+    text-decoration: none;
+}
+@media (max-width: 720px) {
+    .footer ul {
+        margin-left: 0px;
+        text-align: left;
+    }
+
+    .footer li {
+        margin: 0;
+        display: block;
+    }
+}
+
+@media (min-width: 720px) and (max-width: 981px) {
+    .footer li{
+        margin: 11px;
+    }
+}

@@ -1,10 +1,6 @@
 <%- include('../parts/head') %>
+<%- include('../parts/header') %>
     <link rel="stylesheet" href="/css/index.css">
-    <div class="head">
-        <div class="container">
-            <h1>DocBags 1.0</h1>
-        </div>
-    </div>
     <div class="main">
         <div class="container">
             <div class="row">
@@ -30,7 +26,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="type" class="form-label">item type</label>
-                        <input type="text" class="form-control" id="type" required>
+                        <input type="text" class="form-control" id="type" name="itemType" required>
                     </div>
                     <div class="mb-3">
                         <input type="file" class="form-control" name="doc" id="file" required>
@@ -42,18 +38,7 @@
             </div>
         </div>
     </div>
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <ul>
-                    <li><a href="#">uploading Document</a></li>
-                    <li><a href="#">login & creating</a></li>
-                    <li><a href="#">search or uploading page</a></li>
-                    <li><a href="#">search Documents</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    <%- include('../parts/footer') %>
     </body>
 
     </html>
