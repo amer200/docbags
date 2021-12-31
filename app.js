@@ -7,7 +7,7 @@ const ejs = require('ejs');
 const multer = require('multer');
 const storage = multer.diskStorage({
     destination: (req, res, cb) => {
-        cb(null, 'uploads/')
+        cb(null, 'public/uploads/')
     },
     filename: (req, file, cb) => {
         const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);

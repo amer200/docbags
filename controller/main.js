@@ -24,7 +24,7 @@ exports.postUploadDoc = (req, res, next) => {
                 doctype: doctype,
                 itemdate: itemdate,
                 itemtype: itemtype,
-                path: filepath,
+                path: `uploads/${req.file.filename}`,
                 mimetype: req.file.mimetype
             };
             u.docs.push(doc);
@@ -54,11 +54,10 @@ exports.showDoc = (req, res, next) => {
                     doc: doc[0]
                 })
             } else {
-                res.contentType("application/pdf");
-                fs.createReadStream(path).pipe(res)
-                // return res.render('main/doc-view',{
-                //     mime: 'pdf'
-                // })
+                return res.render('main/doc-view',{
+                    mime: 'pdf',
+                    doc: doc[0]
+                })
             }
         })
         .catch(err => {
