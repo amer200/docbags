@@ -21,6 +21,7 @@ exports.postUploadDoc = (req, res, next) => {
                 return res.send('wrong password');
             }
             const doc = {
+                id: u.docs.length + 1,
                 doctype: doctype,
                 itemdate: itemdate,
                 itemtype: itemtype,
@@ -54,7 +55,7 @@ exports.showDoc = (req, res, next) => {
                     doc: doc[0]
                 })
             } else {
-                return res.render('main/doc-view',{
+                return res.render('main/doc-view', {
                     mime: 'pdf',
                     doc: doc[0]
                 })
@@ -63,4 +64,38 @@ exports.showDoc = (req, res, next) => {
         .catch(err => {
             console.log(err)
         })
+}
+exports.deleteDoc = (req, res, next) => {
+    const doc = req.params.doc;
+    // fs.unlink(doc, (err => {
+    //     if (err) console.log(err);
+    //     else {
+    //         console.log("deleted doc");
+    //     }
+    // }));
+    User.findOne({
+        accountnum: '1'
+    })
+    .then( u =>{
+        const deletedDoc  = u.docs.filter( d =>{
+            return d.id == doc
+        });
+        fs.unlink(`public/${deletedDoc[0].path}`, (err => {
+            if (err) console.log(err);
+            else {
+                console.log("deleted doc");
+            }
+        }));
+        const newDocs = u.docs.filter( d =>{
+            return d.id !== doc
+        });
+        u.docs = newDocs;
+        return u.save()
+    })
+    .then( result =>{
+        res.redirect('/')
+    })
+    .catch(err =>{
+        console.log(err)
+    })
 }

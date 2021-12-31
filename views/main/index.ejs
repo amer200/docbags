@@ -1,44 +1,78 @@
 <%- include('../parts/head') %>
-<%- include('../parts/header') %>
-    <link rel="stylesheet" href="/css/index.css">
-    <div class="main">
-        <div class="container">
-            <div class="row">
-                <form action="/upload" method="post" enctype="multipart/form-data">
-                    <div class="mb-3">
-                        <h3> insert New Document</h3>
-                    </div>
-                    <div class="mb-3">
-                        <label for="accountnum" class="form-label">Account Number</label>
-                        <input type="text" class="form-control" id="accountnum" name="accountNum" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label">password</label>
-                        <input type="password" class="form-control" id="password" name="password" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="documenttype" class="form-label">Document type</label>
-                        <input type="text" class="form-control" id="documenttype" name="docType" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="date" class="form-label">item date</label>
-                        <input type="date" class="form-control" id="date" name="itemDate" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="type" class="form-label">item type</label>
-                        <input type="text" class="form-control" id="type" name="itemType" required>
-                    </div>
-                    <div class="mb-3">
-                        <input type="file" class="form-control" name="doc" id="file" required>
-                    </div>
-                    <div class="mb-3">
-                        <button type="submit" class="btn btn-dark">submit</button>
-                    </div>
-                </form>
+    <%- include('../parts/header') %>
+        <link rel="stylesheet" href="/css/index.css">
+        <div class="main">
+            <div class="container">
+                <div class="row">
+                    <form action="/upload" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <h3> insert New Document</h3>
+                        </div>
+                        <div class="mb-3">
+                            <label for="accountnum" class="form-label">Account Number</label>
+                            <input type="text" class="form-control" id="accountnum" name="accountNum" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">password</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="documenttype" class="form-label">Document type</label>
+                            <select class="form-select" aria-label="Default select example" id="documenttype"
+                                name="docType" required>
+                                <option selected value="فاتورة مبيعات">فاتورة مبيعات</option>
+                                <option value="سند قبض">سند قبض</option>
+                                <option value="سند صرف">سند صرف</option>
+                                <option value="صك">صك</option>
+                                <option value="عقد بشكل عام">عقد بشكل عام</option>
+                                <option value="اض جديد">اض جديد</option>
+                            </select>
+                            <!-- <input type="text" class="form-control" id="documenttype" name="docType" required> -->
+                        </div>
+                        <div class="mb-3">
+                            <label for="date" class="form-label">item date</label>
+                            <input type="date" class="form-control" id="date" name="itemDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="type" class="form-label">item type</label>
+                            <select class="form-select" aria-label="Default select example" id="type" name="itemType"
+                                required>
+                                <option selected value="موبايل">موبايل</option>
+                                <option value="ثلاجة">ثلاجة</option>
+                                <option value="غسالة">غسالة</option>
+                                <option value="نشافة">نشافة</option>
+                                <option value="تلفزيون">تلفزيون</option>
+                                <option value="جهاز استقبال">جهاز استقبال</option>
+                                <option value="كمبيوتر">كمبيوتر</option>
+                                <option value="لاب توب">لاب توب</option>
+                                <option value="آي باد">آي باد</option>
+                                <option value="كاميرا">كاميرا</option>
+                                <option value="طابعة">طابعة</option>
+                                <option value="مكيفات">مكيفات</option>
+                                <option value="سيارة">سيارة</option>
+                                <option value="فرن">فرن</option>
+                                <option value="ملابس">ملابس</option>
+                                <option value="ادوات صحية">ادوات صحية</option>
+                                <option value="خلاط">خلاط</option>
+                                <option value="الكترونيات اجمالا">الكترونيات اجمالا</option>
+                                <option value="ساعة">ساعة</option>
+                                <option value="اثاث">اثاث</option>
+                            </select>
+                            <!-- <button class="btn btn-dark" id='add-option-item'>+ add new</button> -->
+                            <!-- <input type="text" class="form-control" id="type" name="itemType" required> -->
+                        </div>
+                        <div class="mb-3">
+                            <input type="file" class="form-control" name="doc" id="file" required>
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-dark">submit</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-    <%- include('../parts/footer') %>
-    </body>
+        <%- include('../parts/footer') %>
+        <script src="/js/index.js"></script>
+            </body>
 
-    </html>
+            </html>

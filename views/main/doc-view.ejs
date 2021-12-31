@@ -5,9 +5,11 @@
         <%- include('../parts/header') %>
             <link rel="stylesheet" href="/css/doc-view.css">
             <span class="doc-type">
-                <%= doc.doctype%>
+                <%= doc.doctype%> /
             </span>
-            <span class="item-type">item type</span>
+            <span class="item-type">
+                <%=doc.itemtype%>
+            </span>
             <div class="doc-container">
                 <div id="GFG" class="container">
                     <% if(mime=='img' ){%>
@@ -20,7 +22,8 @@
             <div class="btns">
                 <div class="contaner">
                     <div class="row">
-                        <button class="btn" id='delete'> delete</button>
+                        <form action="/delete-doc/<%=doc.id%>" method='post' id="deleteForm"></form><button class="btn" id='delete'>
+                            delete</button>
                         <button class="btn" id='print' onclick="printDiv()"> print</button>
                         <button class="btn" id='share'> share</button>
 
@@ -36,11 +39,12 @@
                         a.document.write('<body >');
                         a.document.write(divContents);
                         a.document.write('</body></html>');
-                        document.getElementById("GFG").style.width= '500px';
+                        document.getElementById("GFG").style.width = '500px';
                         a.document.close();
                         a.print();
                     }
                 </script>
+                <script src="/js/doc-view.js"></script>
     </body>
 
     </html>
