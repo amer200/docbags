@@ -29,8 +29,13 @@
     left: 44%;
 }
 
+i {
+    font-size: 3.1rem;
+    margin: 10px;
+}
+
 @media print {
-    .doc-container *{
+    .doc-container * {
         display: block;
         max-width: 100%;
     }
