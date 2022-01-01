@@ -24,11 +24,11 @@ function fbs_click() {
     return false;
 }
 twImg.src = doc.src;
-twBtn.href = `https://twitter.com/intent/tweet?url=${doc.src}`;
+twBtn.href = `https://twitter.com/intent/tweet?url=${encodeURIComponent(doc.src.trim())}`;
 dDoc.href = doc.src;
 
 function whatsAppShare() {
     const number = prompt('type the number');
-    window.open(`https://api.whatsapp.com/send?phone=${number}&text=${doc.src}`, '_blank');
+    window.open(`https://api.whatsapp.com/send?phone=${number}&text=${encodeURIComponent(doc.src.trim())}`, '_blank');
 }
 // whatsApp.href = `https://api.whatsapp.com/send?phone=${number}&text=${doc.src}`;
