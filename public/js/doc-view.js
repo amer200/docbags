@@ -13,6 +13,9 @@ const twBtn = document.getElementById('tw-link');
 const twImg = document.getElementById('tw-img');
 const dDoc = document.getElementById('d-doc');
 const linkedIn = document.getElementById('linkedin');
+const whatsApp = document.getElementById('whats-app');
+const whatsForm = document.getElementById('whatsForm');
+
 function fbs_click() {
     u = doc.src;
     // t=document.title;
@@ -23,3 +26,9 @@ function fbs_click() {
 twImg.src = doc.src;
 twBtn.href = `https://twitter.com/intent/tweet?url=${doc.src}`;
 dDoc.href = doc.src;
+
+function whatsAppShare() {
+    const number = prompt('type the number');
+    window.open(`https://api.whatsapp.com/send?phone=${number}&text=${doc.src}`, '_blank');
+}
+// whatsApp.href = `https://api.whatsapp.com/send?phone=${number}&text=${doc.src}`;
